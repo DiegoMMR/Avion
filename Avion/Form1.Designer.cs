@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Avion = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -35,6 +36,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Rusia = new System.Windows.Forms.PictureBox();
             this.Guatemala = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Tiempo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Avion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Rusia)).BeginInit();
@@ -45,6 +48,7 @@
             // 
             this.panel1.BackgroundImage = global::Avion.Properties.Resources.mapamundi;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.Tiempo);
             this.panel1.Controls.Add(this.Avion);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label2);
@@ -74,7 +78,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
+            this.button1.Text = "Inicio";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -124,6 +128,20 @@
             this.Guatemala.TabStop = false;
             this.Guatemala.Click += new System.EventHandler(this.Guatemala_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // Tiempo
+            // 
+            this.Tiempo.AutoSize = true;
+            this.Tiempo.BackColor = System.Drawing.Color.Transparent;
+            this.Tiempo.Location = new System.Drawing.Point(21, 13);
+            this.Tiempo.Name = "Tiempo";
+            this.Tiempo.Size = new System.Drawing.Size(13, 13);
+            this.Tiempo.TabIndex = 6;
+            this.Tiempo.Text = "0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -150,6 +168,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox Avion;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label Tiempo;
     }
 }
 

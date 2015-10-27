@@ -14,7 +14,7 @@ namespace Avion
 
     public partial class Form1 : Form
     {
-        int Proceso = 0;
+        int Proceso = 1;
         int X, Y;
 
         public Form1()
@@ -48,8 +48,7 @@ namespace Avion
         {
             label1.Text = "X = " + Rusia.Location.X;
             label2.Text = "Y = " + Rusia.Location.Y;
-            X = Rusia.Location.X;
-            Y = Rusia.Location.Y;
+         
 
             Avion.Location = new Point(X, Y);
         }
@@ -61,23 +60,37 @@ namespace Avion
             {
                 button1.Text = "Vamos!";
                 Proceso = 3;
+                timer1.Start();
             }
 
             if (Proceso == 1)
             {
                 button1.Text = "Destino";
                 Proceso = 2;
-            }
-
-            if (Proceso == 0)
-            {
-                button1.Text = "Inicio";
-                Proceso = 1;
-            }
-
-         
+            } 
 
           
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            //Aumenta el valor del laber Tiempo cuando se inica el timer
+            int segundos = Convert.ToInt32(Tiempo.Text);
+            segundos++;
+            Tiempo.Text = Convert.ToString(segundos);
+
+            //esto va a mover el avion conforme a los segundos desde el punto de Guatemala
+            //falta un calculo del angulo para poder hacer que llegue donde esta el destino
+            int X2 = Guatemala.Location.X + segundos;
+            int Y2 = Guatemala.Location.Y - segundos;           
+
+            Avion.Location = new Point(X2, Y2);
+
+            if (X == Rusia.Location.X && Y == Rusia.Location.Y)
+            {
+                timer1.Stop();
+            }
 
         }
 
