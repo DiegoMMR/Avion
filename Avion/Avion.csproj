@@ -58,17 +58,16 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -86,6 +85,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\mapamundi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Avion0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Avion45.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Avion90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Avion135.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Avion180.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Avion225.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Avion270.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Avion315.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="mapamundi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Punto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Avion.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

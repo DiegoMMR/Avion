@@ -19,22 +19,38 @@ namespace Avion
         double  m, angulo, grados;
 
         string seleccion;
-
-    
+ 
 
         
 
         public Form1()
         {
             InitializeComponent();
+
         }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
-            Panel1.Controls.Add(Avion);
-            
+                
         }
 
+        void reiniciar()
+        {
+            //Reinica todo el programa 
+            Proceso = 0;
+            Control.Text = "Comenzar";
+            Texto.Text = "Haz clic en comenzar";
+            label1.Text = "X = ";
+            label2.Text = "Y = ";
+            Pais.Text = "Pais: ";
+            Avion.Image = null;
+            label3.Text = "angulo = ";
+            timer1.Stop();
+            TextoPrtida.Text = "Partida: ";
+            TextoDestino.Text = "Destino: ";
+            Avion.Location = new Point(100, 366);
+            Tiempo.Text = "0";
+        }
 
         private void Guatemala_Click(object sender, EventArgs e)
         {
@@ -43,23 +59,73 @@ namespace Avion
             label2.Text = "Y = " + Guatemala.Location.Y;
            
             seleccion = "Guatemala";
+            Pais.Text = "Pais: " + seleccion;        
         }
+        private void Australia_Click(object sender, EventArgs e)
+        {
+            label1.Text = "X = " + Australia.Location.X;
+            label2.Text = "Y = " + Australia.Location.Y;
 
+            seleccion = "Australia";
+            Pais.Text = "Pais: " + seleccion; 
+        }
         private void Rusia_Click(object sender, EventArgs e)
         {
 
             label1.Text = "X = " + Rusia.Location.X;
             label2.Text = "Y = " + Rusia.Location.Y;
-            X2 = Rusia.Location.X;
-            Y2 = Rusia.Location.Y;
-
 
             seleccion = "Rusia";
+            Pais.Text = "Pais: " + seleccion; 
 
         }
 
-        
 
+        void imagen()
+        {
+            //cambia la imagen dependiendo de la direccion
+            if (X1 == X2 && Y1 > Y2)
+            {
+                Avion.Image = Image.FromFile("Avion0.png");
+            }
+
+            if (X1 < X2 && Y1 > Y2)
+            {
+                Avion.Image = Image.FromFile("Avion45.png");
+            }
+
+            if (X1 < X2 && Y1 == Y2)
+            {
+               Avion.Image = Image.FromFile("Avion90.png");
+            }
+          
+            if (X1 < X2 && Y1 < Y2)
+            {
+                Avion.Image = Image.FromFile("Avion135.png");
+            }
+
+            if (X1 == X2 && Y1 < Y2)
+            {
+                Avion.Image = Image.FromFile("Avion180.png");
+            }
+
+            if (X1 > X2 && Y1 < Y2)
+            {
+                Avion.Image = Image.FromFile("Avion225.png");
+            }
+
+            if (X1 > X2 && Y1 == Y2)
+            {
+                Avion.Image = Image.FromFile("Avion270.png");
+            }
+
+            if (X1 > X2 && Y1 > Y2)
+            {
+                Avion.Image = Image.FromFile("Avion315.png");
+            }
+
+
+        }
         void Calculo()
         {
             //calcula el valor de la pendiente
@@ -77,14 +143,18 @@ namespace Avion
             //aca se define para que direccion va el avion conforme al angulo y al punto de partida
             if (X1 > X2)
             {
+                //como va hacia la izquierda se resta
                 X = Convert.ToInt32(X1 - segundos * Math.Cos(angulo));
                 Y = Convert.ToInt32(Y1 - segundos * Math.Sin(angulo));
+
             }
 
             if (X1 < X2)
             {
+                //como va hacia la derecha se suma
                 X = Convert.ToInt32(X1 + segundos * Math.Cos(angulo));
                 Y = Convert.ToInt32(Y1 + segundos * Math.Sin(angulo));
+
             }
         }
 
@@ -101,6 +171,12 @@ namespace Avion
            {
                X1 = Rusia.Location.X;
                Y1 = Rusia.Location.Y;
+           }
+
+           if (seleccion == "Australia")
+           {
+               X1 = Australia.Location.X;
+               Y1 = Australia.Location.Y;
            }
 
            TextoPrtida.Text = "Partida: " + seleccion;
@@ -120,10 +196,16 @@ namespace Avion
                 Y2 = Rusia.Location.Y;
             }
 
+            if (seleccion == "Australia")
+            {
+                X2 = Australia.Location.X;
+                Y2 = Australia.Location.Y;
+            }
+
             TextoDestino.Text = "Destino: " + seleccion;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Control_Click(object sender, EventArgs e)
         {
             // este proceso puede servir para ingrsar el inicio, destino y accionar el programa de movimiento
             if (Proceso == 3)
@@ -135,19 +217,19 @@ namespace Avion
 
             if (Proceso == 2)
             {
+                Proceso = 3;
                 Destino();
                 Control.Text = "Despegue!";
-                Proceso = 3;
-
                 Avion.Location = new Point(X1, Y1);
-                
+                imagen();
             }
 
             if (Proceso == 1)
             {
                 //aca se debera de guardar las coordenadas seleccionadas el los puntos X2 y Y2
-                Control.Text = "Destino";
+               
                 Proceso = 2;
+                Control.Text = "Destino";
                 Texto.Text = "Seleccione el Destino";
                 Partida();
             }
@@ -155,13 +237,16 @@ namespace Avion
             if (Proceso == 0)
             {
                 //aca se debera de guardar las coordenadas seleccionadas el los puntos X1 y Y1
-                Control.Text = "Inicio";
+                
                 Proceso = 1;
+                Control.Text = "Inicio";
                 Texto.Text = "Seleccione un punto de Partida";
+                Avion.Image = Image.FromFile("Avion0.png");
             } 
           
 
         }
+
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -183,7 +268,7 @@ namespace Avion
             //muestra los grados
             label3.Text = "angulo = " + grados;
 
-            if (X == X2 || Y == Y2)
+            if (X == X2 && Y == Y2)
             {
                 timer1.Stop();
                 Texto.Text = "Gracias por viajar con nosotros";
@@ -191,7 +276,10 @@ namespace Avion
 
         }
 
-        
+        private void Reinicio_Click(object sender, EventArgs e)
+        {
+            reiniciar();
+        }
 
     }
 }
