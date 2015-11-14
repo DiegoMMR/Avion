@@ -105,15 +105,7 @@ namespace Avion
             seleccion = "Africa";
             Pais.Text = "Pais: " + seleccion; 
         }
-        private void Italia_Click(object sender, EventArgs e)
-        {
-            label1.Text = "X = " + Italia.Location.X;
-            label2.Text = "Y = " + Italia.Location.Y;
-
-            seleccion = "Italia";
-            Pais.Text = "Pais: " + seleccion; 
-        }
-
+     
         void imagen()
         {
             //cambia la imagen dependiendo de la direccion
@@ -169,8 +161,8 @@ namespace Avion
 
             //aumenta de la mitad para poder crear la curva
 
-            X3 = mitadX - 25;
-            Y3 = mitadY - 25;
+            X3 = mitadX - 23;
+            Y3 = mitadY - 23;
             
 
             
@@ -206,12 +198,7 @@ namespace Avion
 
         void Partida()
         {
-           if (seleccion == "Italia")
-           {
-               X1 = Italia.Location.X;
-               Y1 = Italia.Location.Y;             
-           }
-
+          
            if (seleccion == "Africa")
            {
                X1 = Africa.Location.X;
@@ -247,11 +234,7 @@ namespace Avion
         }
         void Destino()
         {
-            if (seleccion == "Italia")
-            {
-                X2 = Italia.Location.X;
-                Y2 = Italia.Location.Y;
-            }
+          
 
             if (seleccion == "Africa")
             {

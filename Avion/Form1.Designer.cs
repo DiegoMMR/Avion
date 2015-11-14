@@ -45,7 +45,6 @@
             this.Australia = new System.Windows.Forms.PictureBox();
             this.Guatemala = new System.Windows.Forms.PictureBox();
             this.Rusia = new System.Windows.Forms.PictureBox();
-            this.Italia = new System.Windows.Forms.PictureBox();
             this.Africa = new System.Windows.Forms.PictureBox();
             this.Canada = new System.Windows.Forms.PictureBox();
             this.Panel1.SuspendLayout();
@@ -53,7 +52,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Australia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Guatemala)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Rusia)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Italia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Africa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Canada)).BeginInit();
             this.SuspendLayout();
@@ -79,7 +77,6 @@
             this.Panel1.Controls.Add(this.Australia);
             this.Panel1.Controls.Add(this.Guatemala);
             this.Panel1.Controls.Add(this.Rusia);
-            this.Panel1.Controls.Add(this.Italia);
             this.Panel1.Controls.Add(this.Africa);
             this.Panel1.Controls.Add(this.Canada);
             this.Panel1.Location = new System.Drawing.Point(12, 12);
@@ -197,7 +194,7 @@
             this.Australia.BackgroundImage = global::Avion.Properties.Resources.Punto;
             this.Australia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Australia.InitialImage = null;
-            this.Australia.Location = new System.Drawing.Point(608, 345);
+            this.Australia.Location = new System.Drawing.Point(633, 353);
             this.Australia.Name = "Australia";
             this.Australia.Size = new System.Drawing.Size(20, 20);
             this.Australia.TabIndex = 11;
@@ -223,25 +220,12 @@
             this.Rusia.BackgroundImage = global::Avion.Properties.Resources.Punto;
             this.Rusia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Rusia.InitialImage = null;
-            this.Rusia.Location = new System.Drawing.Point(510, 125);
+            this.Rusia.Location = new System.Drawing.Point(494, 125);
             this.Rusia.Name = "Rusia";
             this.Rusia.Size = new System.Drawing.Size(20, 20);
             this.Rusia.TabIndex = 1;
             this.Rusia.TabStop = false;
             this.Rusia.Click += new System.EventHandler(this.Rusia_Click);
-            // 
-            // Italia
-            // 
-            this.Italia.BackColor = System.Drawing.Color.Transparent;
-            this.Italia.BackgroundImage = global::Avion.Properties.Resources.Punto;
-            this.Italia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Italia.InitialImage = null;
-            this.Italia.Location = new System.Drawing.Point(387, 204);
-            this.Italia.Name = "Italia";
-            this.Italia.Size = new System.Drawing.Size(20, 20);
-            this.Italia.TabIndex = 15;
-            this.Italia.TabStop = false;
-            this.Italia.Click += new System.EventHandler(this.Italia_Click);
             // 
             // Africa
             // 
@@ -249,7 +233,7 @@
             this.Africa.BackgroundImage = global::Avion.Properties.Resources.Punto;
             this.Africa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Africa.InitialImage = null;
-            this.Africa.Location = new System.Drawing.Point(406, 308);
+            this.Africa.Location = new System.Drawing.Point(407, 291);
             this.Africa.Name = "Africa";
             this.Africa.Size = new System.Drawing.Size(20, 20);
             this.Africa.TabIndex = 16;
@@ -262,7 +246,7 @@
             this.Canada.BackgroundImage = global::Avion.Properties.Resources.Punto;
             this.Canada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Canada.InitialImage = null;
-            this.Canada.Location = new System.Drawing.Point(170, 151);
+            this.Canada.Location = new System.Drawing.Point(191, 125);
             this.Canada.Name = "Canada";
             this.Canada.Size = new System.Drawing.Size(20, 20);
             this.Canada.TabIndex = 14;
@@ -284,7 +268,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Australia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Guatemala)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Rusia)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Italia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Africa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Canada)).EndInit();
             this.ResumeLayout(false);
@@ -308,7 +291,6 @@
         private System.Windows.Forms.Label Pais;
         private System.Windows.Forms.Button Reinicio;
         private System.Windows.Forms.PictureBox Africa;
-        private System.Windows.Forms.PictureBox Italia;
         private System.Windows.Forms.PictureBox Canada;
         private System.Windows.Forms.Label label3;
     }
